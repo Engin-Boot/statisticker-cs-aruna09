@@ -6,16 +6,16 @@ namespace Statistics
 {
     public class StatsComputer
     {
-
+        
         public Stats setStats;
         public Stats CalculateStatistics(List<double> numbers) {
             //Implement statistics here
             setStats = new Stats();
             if(numbers.Count() == 0)
             {
+                setStats.average = double.NaN;
                 setStats.max = double.NaN;
-                setStats.max = double.NaN;
-                setStats.max = double.NaN;
+                setStats.min = double.NaN;
                 return setStats;
             }
             else
