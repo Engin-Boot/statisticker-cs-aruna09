@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using Statistics;
+using System.Collections.Generic;
 
 namespace Statistics.Test
 {
@@ -17,11 +18,13 @@ namespace Statistics.Test
             Assert.True(Math.Abs(statsComputer.max - 8.9) <= epsilon);
             Assert.True(Math.Abs(statsComputer.min - 1.5) <= epsilon);
         }
+        [Fact]
         public void ReportsNaNForEmptyInput()
         {
             var statsComputer = new StatsComputer();
             var computedStats = statsComputer.CalculateStatistics(
                 new List<float>{});
+            float epsilon = 0.001F;
             Assert.False(Math.Abs(statsComputer.average - 4.525) == epsilon);
             Assert.False(Math.Abs(statsComputer.max - 8.9) <= epsilon);
             Assert.False(Math.Abs(statsComputer.min - 1.5) <= epsilon);
