@@ -6,14 +6,15 @@ namespace Statistics
 {
     public class StatsComputer
     {
+        
         public Stats setStats;
-        public Stats CalculateStatistics(List<float> numbers) {
+        public Stats CalculateStatistics(List<double> numbers) {
             //Implement statistics here
             if(numbers.Count() == 0)
             {
-                setStats.max = float.NaN;
-                setStats.max = float.NaN;
-                setStats.max = float.NaN;
+                setStats.max = double.NaN;
+                setStats.max = double.NaN;
+                setStats.max = double.NaN;
                 return setStats;
             }
             else
@@ -24,19 +25,19 @@ namespace Statistics
                 return setStats;
             }
         }
-        private void ReturnAverage(List<float> numbers)
+        private void ReturnAverage(List<double> numbers)
         {
-            float computedAverage = numbers.Sum() / numbers.Count();
+            double computedAverage = numbers.Sum() / numbers.Count();
             setStats.average = computedAverage;
         }
-        private void ReturnMax(List<float> numbers)
+        private void ReturnMax(List<double> numbers)
         {
-            float max = numbers.Max();
+            double max = numbers.Max();
             setStats.max = max;
         }
-        private void ReturnMin(List<float> numbers)
+        private void ReturnMin(List<double> numbers)
         {
-            float min = numbers.Min();
+            double min = numbers.Min();
             setStats.min = min;
         }
     }
